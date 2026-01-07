@@ -1,0 +1,13 @@
+[build]
+  base = "frontend"
+  command = "npm run build"
+  publish = ".next"
+
+[build.environment]
+  NODE_VERSION = "22.21.1"
+  NPM_FLAGS = "--prefix frontend"
+
+# Next.js plugin for proper serverless functions support
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
