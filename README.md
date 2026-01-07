@@ -37,7 +37,7 @@ cd backend
 npm install
 ```
 
-3. Create `.env` file:
+3. Create environment file (`backend/env.example` provided):
 ```bash
 PORT=3001
 NODE_ENV=development
@@ -46,6 +46,11 @@ JWT_EXPIRES_IN=7d
 SUPABASE_URL=your-supabase-url
 SUPABASE_SERVICE_ROLE_KEY=your-supabase-service-role-key
 ```
+
+For deployment:
+- Render backend: set the same variables above in Render dashboard (keep `PORT` default; Render sets `PORT` at runtime).
+- Supabase: use your project URL and **service role key**.
+- JWT secret: change to a strong value in production.
 
 4. Run database migrations:
    - Open Supabase Dashboard → SQL Editor
@@ -84,7 +89,16 @@ cd frontend
 npm install
 ```
 
-3. Start development server:
+3. Create environment file (`frontend/env.local.example` provided):
+```bash
+NEXT_PUBLIC_API_URL=http://localhost:3001/api/v1
+```
+
+For deployment:
+- Netlify frontend: set `NEXT_PUBLIC_API_URL` to your Render backend URL ending with `/api/v1`.
+- Local dev: keep `http://localhost:3001/api/v1`.
+
+4. Start development server:
 ```bash
 npm run dev
 ```
