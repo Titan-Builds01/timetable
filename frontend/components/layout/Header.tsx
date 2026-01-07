@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import apiClient from '@/lib/api-client';
-import { User } from '../../../shared/types';
+import { User } from '@/lib/types';
 import Badge from '@/components/ui/Badge';
 import { User as UserIcon } from 'lucide-react';
 

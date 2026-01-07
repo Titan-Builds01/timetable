@@ -3,7 +3,7 @@
 import { useState, useEffect, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import apiClient from '@/lib/api-client';
-import { ConstraintsConfig, Session } from '../../../shared/types';
+import { ConstraintsConfig, Session } from '@/lib/types';
 import DashboardWrapper from '@/components/layout/DashboardWrapper';
 
 function ConstraintsContent() {

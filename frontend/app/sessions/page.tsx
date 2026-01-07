@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import apiClient from '@/lib/api-client';
-import { Session } from '../../../shared/types';
+import { Session } from '@/lib/types';
 import DashboardWrapper from '@/components/layout/DashboardWrapper';
 import DataTable, { Column } from '@/components/ui/DataTable';
 import Modal from '@/components/ui/Modal';

@@ -3,7 +3,7 @@
 import { useState, useEffect, Suspense } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
 import apiClient from '@/lib/api-client';
-import { Session, ScheduleRun } from '../../../shared/types';
+import { Session, ScheduleRun } from '@/lib/types';
 import DashboardWrapper from '@/components/layout/DashboardWrapper';
 
 function GenerateContent() {

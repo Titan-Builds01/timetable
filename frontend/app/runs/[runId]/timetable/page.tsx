@@ -3,7 +3,7 @@
 import { useState, useEffect, Suspense } from 'react';
 import { useParams, useSearchParams } from 'next/navigation';
 import apiClient from '@/lib/api-client';
-import { ScheduledEvent, TimeSlot, Room, Event, CourseOffering, Day, Lock } from '../../../../../../shared/types';
+import { ScheduledEvent, TimeSlot, Room, Event, CourseOffering, Day, Lock } from '@/lib/types';
 import DashboardWrapper from '@/components/layout/DashboardWrapper';
 import Drawer from '@/components/ui/Drawer';
 import Button from '@/components/ui/Button';

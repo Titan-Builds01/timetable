@@ -3,7 +3,7 @@
 import { useState, useEffect, Suspense } from 'react';
 import { useParams, useSearchParams, useRouter } from 'next/navigation';
 import apiClient from '@/lib/api-client';
-import { ScheduleRun, UnscheduledEvent } from '../../../../../shared/types';
+import { ScheduleRun, UnscheduledEvent } from '@/lib/types';
 import DashboardWrapper from '@/components/layout/DashboardWrapper';
 
 function RunDetailsContent() {

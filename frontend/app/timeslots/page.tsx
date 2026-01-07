@@ -3,7 +3,7 @@
 import { useState, useEffect, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import apiClient from '@/lib/api-client';
-import { TimeSlot, Session } from '../../../shared/types';
+import { TimeSlot, Session } from '@/lib/types';
 import DashboardWrapper from '@/components/layout/DashboardWrapper';
 
 function TimeSlotsContent() {

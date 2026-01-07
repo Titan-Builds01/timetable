@@ -3,7 +3,7 @@
 import { useState, useEffect, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import apiClient from '@/lib/api-client';
-import { CourseOffering, Session, CanonicalCourse } from '../../../shared/types';
+import { CourseOffering, Session, CanonicalCourse } from '@/lib/types';
 import DashboardWrapper from '@/components/layout/DashboardWrapper';
 
 interface MatchingSuggestion {

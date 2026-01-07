@@ -3,7 +3,7 @@
 import { useState, useEffect, Suspense } from 'react';
 import { useParams, useSearchParams } from 'next/navigation';
 import apiClient from '@/lib/api-client';
-import { Lecturer, TimeSlot, BlockedTime, Day } from '../../../../../shared/types';
+import { Lecturer, TimeSlot, BlockedTime, Day } from '@/lib/types';
 import DashboardWrapper from '@/components/layout/DashboardWrapper';
 
 const DAYS: Day[] = ['MON', 'TUE', 'WED', 'THU', 'FRI'];

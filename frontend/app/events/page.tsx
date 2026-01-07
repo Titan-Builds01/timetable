@@ -3,7 +3,7 @@
 import { useState, useEffect, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import apiClient from '@/lib/api-client';
-import { Event, Session, CourseOffering } from '../../../shared/types';
+import { Event, Session, CourseOffering } from '@/lib/types';
 import DashboardWrapper from '@/components/layout/DashboardWrapper';
 
 function EventsContent() {

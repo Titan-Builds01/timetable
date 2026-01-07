@@ -3,7 +3,7 @@
 import { useState, useEffect, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import apiClient from '@/lib/api-client';
-import { CourseOffering, Session } from '../../../shared/types';
+import { CourseOffering, Session } from '@/lib/types';
 import DashboardWrapper from '@/components/layout/DashboardWrapper';
 import DataTable, { Column } from '@/components/ui/DataTable';
 import Modal from '@/components/ui/Modal';
