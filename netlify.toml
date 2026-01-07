@@ -5,7 +5,6 @@
 
 [build.environment]
   NODE_VERSION = "22.21.1"
-  NPM_FLAGS = "--prefix frontend"
 
 # Next.js plugin for proper serverless functions support
 [[plugins]]
