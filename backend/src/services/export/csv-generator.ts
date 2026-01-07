@@ -1,5 +1,8 @@
 import { ScheduledEvent, TimeSlot, Room, Event, CourseOffering } from '../../../shared/types';
 
+const YEAR = new Date().getFullYear();
+const COPYRIGHT = `© ${YEAR} Sulva Solutions. All rights reserved.`;
+
 export class CSVGenerator {
   static generate(
     scheduled: ScheduledEvent[],
@@ -25,7 +28,8 @@ export class CSVGenerator {
       return timeslots.find((ts) => ts.id === timeslotId)?.label || timeslotId;
     };
 
-    // CSV Header
+    // CSV Header (include a comment line with copyright/branding)
+    const metadata = [`# Timetable Export - Sulva Solutions`, `# ${COPYRIGHT}`];
     const headers = [
       'Event ID',
       'Course Code',
@@ -37,7 +41,7 @@ export class CSVGenerator {
       'Lecturer ID',
     ];
 
-    const rows = [headers.join(',')];
+    const rows = [...metadata, headers.join(',')];
 
     // CSV Rows
     for (const scheduledEvent of scheduled) {

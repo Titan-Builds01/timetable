@@ -2,6 +2,8 @@ import PDFDocument from 'pdfkit';
 import { ScheduledEvent, TimeSlot, Room, Event, CourseOffering, Day } from '../../../shared/types';
 
 const DAYS: Day[] = ['MON', 'TUE', 'WED', 'THU', 'FRI'];
+const YEAR = new Date().getFullYear();
+const COPYRIGHT = `© ${YEAR} Sulva Solutions. All rights reserved.`;
 
 export class PDFGenerator {
   static generateTimetable(
@@ -92,11 +94,23 @@ export class PDFGenerator {
       currentY += cellHeight;
 
       // Page break if needed
-      if (currentY > doc.page.height - 50) {
+      if (currentY > doc.page.height - 80) {
+        // Add footer before new page
+        doc.fontSize(8).fillColor('gray').text(COPYRIGHT, 50, doc.page.height - 40, {
+          align: 'right',
+          width: doc.page.width - 100,
+        });
         doc.addPage();
         currentY = 50;
+        doc.fontSize(10).fillColor('black');
       }
     }
+
+    // Footer on last page
+    doc.fontSize(8).fillColor('gray').text(COPYRIGHT, 50, doc.page.height - 40, {
+      align: 'right',
+      width: doc.page.width - 100,
+    });
 
     return doc;
   }
