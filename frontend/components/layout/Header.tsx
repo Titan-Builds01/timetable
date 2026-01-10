@@ -19,8 +19,12 @@ export default function Header() {
       if (response.data.success) {
         setUser(response.data.data);
       }
-    } catch (error) {
-      console.error('Failed to fetch user:', error);
+    } catch (error: any) {
+      // Silently handle 401 errors (expected for unauthenticated users)
+      // Only log other errors
+      if (error.response?.status !== 401) {
+        console.error('Failed to fetch user:', error);
+      }
     }
   };
 

@@ -303,3 +303,5 @@ CREATE INDEX IF NOT EXISTS idx_rooms_session ON rooms(session_id);
 CREATE INDEX IF NOT EXISTS idx_rooms_type ON rooms(room_type);
 
 
+
+

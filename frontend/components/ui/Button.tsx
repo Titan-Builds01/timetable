@@ -4,7 +4,7 @@ import { ButtonHTMLAttributes, ReactNode } from 'react';
 import { Loader2 } from 'lucide-react';
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: 'primary' | 'secondary' | 'ghost' | 'danger';
+  variant?: 'primary' | 'secondary' | 'ghost' | 'danger' | 'warning';
   size?: 'sm' | 'md' | 'lg';
   loading?: boolean;
   children: ReactNode;
@@ -37,7 +37,7 @@ export default function Button({
   
   return (
     <button
-      className={`${baseStyles} ${variants[variant]} ${sizes[size]} ${className}`}
+      className={`${baseStyles} ${variants[variant] || variants.primary} ${sizes[size]} ${className}`}
       disabled={disabled || loading}
       {...props}
     >

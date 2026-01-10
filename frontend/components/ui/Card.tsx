@@ -8,6 +8,7 @@ interface CardProps {
   header?: ReactNode;
   footer?: ReactNode;
   padding?: 'none' | 'sm' | 'md' | 'lg';
+  onClick?: () => void;
 }
 
 export default function Card({
@@ -16,6 +17,7 @@ export default function Card({
   header,
   footer,
   padding = 'md',
+  onClick,
 }: CardProps) {
   const paddingClasses = {
     none: '',
@@ -26,10 +28,12 @@ export default function Card({
   
   return (
     <div
+      onClick={onClick}
       className={`
         bg-white dark:bg-gray-800
         rounded-lg shadow-sm
         border border-gray-200 dark:border-gray-700
+        ${onClick ? 'cursor-pointer' : ''}
         ${className}
       `}
     >
